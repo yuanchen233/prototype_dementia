@@ -2,17 +2,17 @@
 First mini app written in Flutter
 
 ##Tech used:
-Data storage: Firebase Storage
-Metadata: Firestore Database
-Frontend with Flutter
-hosted at http://121.4.248.85/ (cheap server, kinda slow, bear with me thx:dizzy:)
+1. Data storage: Firebase Storage
+2. Metadata: Firestore Database
+3. Frontend with Flutter
+4. hosted at http://121.4.248.85/ (cheap server, kinda slow, bear with me thx:dizzy:)
 
 ##What the app does:
-Web application working under Flutter with VScode, a live version is hosted (using file with  > flutter build web)
-A nevagation bar on the left (via SafeArea) for different category
-With in each category, pictures are displayed as a list(via ListView, and FutureBuilder to retrive the image)
-Each picture have a 'like' button, and the number of likes are recorded and saved in the database.
-Under 'Stats', the number of likes can be viewed (buggy, 2 picture missing with nullpointer)
+1. Web application working under Flutter with VScode, a live version is hosted (using file with  > flutter build web)
+2. A nevagation bar on the left (via SafeArea) for different category
+3. With in each category, pictures are displayed as a list(via ListView, and FutureBuilder to retrive the image)
+4. Each picture have a 'like' button, and the number of likes are recorded and saved in the database.
+5. Under 'Stats', the number of likes can be viewed (buggy, 2 picture missing with nullpointer)
 
 ##What could be done/need to be fixed/notes:
 1. Testing and documents (so I can fix the bug)
