@@ -170,16 +170,13 @@ Future<String> getImage(String imgName) async {
 Future<int> getDataLength(category) async {
   CollectionReference collectionRef =
       FirebaseFirestore.instance.collection(category);
-  // Get docs from collection reference
   QuerySnapshot querySnapshot = await collectionRef.get();
-  // Get data from docs and convert map to List
   final allData = querySnapshot.docs.map((doc) => doc.data()).toList();
 
   print(allData);
   return allData.length;
 }
 
-//child: MyImageWidget(imagePath: 'path/to/your/image'),
 class MyImageWidget extends StatelessWidget {
   final String imgName;
   final String category;
@@ -221,17 +218,13 @@ class MyImageWidget extends StatelessWidget {
   }
 }
 
-// a function update the click number to the database
 void onPressed(String category, String imgName) async {
   DocumentReference docRef =
       FirebaseFirestore.instance.collection(category).doc(imgName);
-  // Get docs from collection reference
   DocumentSnapshot<Object?> docSnapshot = await docRef.get();
-  // Get data from docs and convert map to List
-  //final allData = querySnapshot.docs.map((doc) => doc.data()).toList();
 
   var temp = docSnapshot.data() as Map;
-  var click = temp!['click'];
+  var click = temp['click'];
   print(temp);
   print(temp['click']);
 
@@ -243,7 +236,6 @@ class Stats extends StatelessWidget {
   var ret = [];
   Future<String> getStats() async {
     for (var element in collectionList) {
-      // Get docs from collection reference
       CollectionReference collectionRef =
           FirebaseFirestore.instance.collection(element);
 
@@ -304,15 +296,10 @@ class Stats extends StatelessWidget {
                 );
               }
             }
-
-            // Displaying LoadingSpinner to indicate waiting state
             return Center(
               child: CircularProgressIndicator(),
             );
           },
-
-          // Future that needs to be resolved
-          // inorder to display something on the Canvas
           future: getStats(),
         ),
       ),
